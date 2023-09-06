@@ -11,6 +11,9 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { HStack } from "@chakra-ui/layout";
+import { chakra } from "@chakra-ui/react";
+import { motion, isValidMotionProp } from "framer-motion";
+import { fadeIn, textVariant } from "../utils/motion";
 
 import Icon from "@chakra-ui/icon";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -59,7 +62,7 @@ const Header = () => {
                   size="sm"
                   _hover={{ bg: "#ffc627", color: "black" }}
                 >
-                  Arizona State University
+                  🔱 Arizona State University 🔱
                 </Button>
               </a>
             </Flex>
@@ -69,7 +72,10 @@ const Header = () => {
           <a href="https://github.com/dnguye92asu" target="_blank">
             <Icon as={FaGithub} boxSize="50" />
           </a>
-          <a href="https://www.linkedin.com/in/dnguyen26/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/davidnguyen2607/"
+            target="_blank"
+          >
             <Icon as={FaLinkedin} boxSize="50" />
           </a>
         </HStack>
