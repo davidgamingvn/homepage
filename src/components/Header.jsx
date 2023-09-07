@@ -10,6 +10,7 @@ import {
   Heading,
   Button,
 } from "@chakra-ui/react";
+import avatar from "../assets/avatar.jpg";
 import { HStack } from "@chakra-ui/layout";
 import { chakra } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
@@ -25,11 +26,7 @@ const Header = () => {
   return (
     <Stack>
       <Circle bg="blue.100" w="300px" h="300px" alignSelf="center">
-        <Image
-          alignSelf="center"
-          borderRadius="full"
-          src="src/assets/avatar.jpg"
-        />
+        <Image alignSelf="center" borderRadius="full" src={avatar} />
       </Circle>
 
       <Flex
