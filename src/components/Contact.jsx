@@ -195,7 +195,7 @@ const Contact = () => {
                         <FormControl id="submit" float="right">
                           <Button
                             type="submit"
-                            mt = '5'
+                            mt="5"
                             variant="solid"
                             bg="#8c1d40"
                             color="white"
