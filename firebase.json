@@ -2,12 +2,6 @@
   "hosting": {
     "public": "dist",
     "site": "david-nguyen",
-    "ignore": [],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }
