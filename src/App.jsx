@@ -1,7 +1,7 @@
 import { IconButton } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { VStack, Flex, Heading, Spacer } from "@chakra-ui/layout";
+import { VStack, Flex, Spacer } from "@chakra-ui/layout";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
@@ -11,7 +11,6 @@ import Projects from "./components/Projects";
 
 import particleOptions from "./utils/particle";
 import Contact from "./components/Contact";
-import { AnimatePresence, motion } from "framer-motion";
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
@@ -36,7 +35,7 @@ function App() {
       </VStack>
 
       <Projects></Projects>
-
+      <Spacer></Spacer>
       <Technologies></Technologies>
       <Contact></Contact>
     </div>
