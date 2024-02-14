@@ -7,6 +7,8 @@ import { loadFull } from "tsparticles";
 import { useCallback } from "react";
 import Header from "./components/Header";
 import Technologies from "./components/Technologies";
+import Projects from "./components/Projects";
+
 import particleOptions from "./utils/particle";
 import Contact from "./components/Contact";
 import { AnimatePresence, motion } from "framer-motion";
@@ -32,6 +34,9 @@ function App() {
         </Flex>
         <Header></Header>
       </VStack>
+
+      <Projects></Projects>
+
       <Technologies></Technologies>
       <Contact></Contact>
     </div>
