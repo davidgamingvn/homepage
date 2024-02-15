@@ -15,7 +15,7 @@ const Technologies = () => {
         align="center"
         gap={{base: 2, md: 6}}
         templateColumns={{
-          base: "repeat(2, 1fr)", // for small devices
+          base: "repeat(1, 1fr)", // for small devices
           md: "repeat(2, 1fr)", // for medium devices
           lg: "repeat(3, 1fr)",
         }}

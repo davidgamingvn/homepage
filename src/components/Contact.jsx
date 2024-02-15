@@ -133,7 +133,7 @@ const Contact = () => {
                         icon={<BsLinkedin size="28px" />}
                       ></IconButton>
                     </a>
-                    <a href="https://github.com/dnguye92asu" target="_blank">
+                    <a href="https://github.com/davidgamingvn" target="_blank">
                       <IconButton
                         aria-label="github"
                         variant="ghost"

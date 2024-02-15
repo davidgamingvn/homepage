@@ -78,7 +78,7 @@ const projects = [
   {
     name: "Socket Banking",
     description: "Python socket programming project that simulates a banking system with a server and multiple clients, with support for multiple accounts and transactions implementing checkpointing-rollback algorithms for distributed systems.",
-    link: "https://github.com",
+    link: "https://github.com/davidgamingvn/CSE434SocketProject",
     technologies: ["Python", "Cryptography", "Distributed Systems"],
     image: socket_banking,
   },

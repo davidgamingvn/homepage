@@ -66,7 +66,7 @@ const Header = () => {
           </Text>
         </Box>
         <HStack spacing="30px" alignSelf="center" mt="10">
-          <a href="https://github.com/dnguye92asu" target="_blank">
+          <a href="https://github.com/davidgamingvn" target="_blank">
             <Icon as={FaGithub} boxSize="50" />
           </a>
           <a

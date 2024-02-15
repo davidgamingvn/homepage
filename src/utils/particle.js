@@ -1,7 +1,7 @@
 const particleOptions = {
   particles: {
     number: {
-      value: 10,
+      value: 6,
       density: {
         enable: true,
         area: 1500,
@@ -11,7 +11,7 @@ const particleOptions = {
       value: ["#A4161A", "#FFC300", "#D3D3D3", "#FFFFFF"],
     },
     shape: {
-      type: "triangle",
+      type: ["triangle", "circle", "edge", "polygon"], 
     },
     opacity: {
       value: 0.5,
@@ -21,7 +21,7 @@ const particleOptions = {
     },
     links: {
       enable: true,
-      distance: 150,
+      distance: 300,
       color: "#808080",
       opacity: 0.4,
       width: 1,
@@ -54,7 +54,7 @@ const particleOptions = {
         },
       },
       push: {
-        quantity: 5,
+        quantity: 3,
       },
     },
   },
