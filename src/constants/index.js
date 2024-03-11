@@ -13,6 +13,7 @@ import muze from "../assets/projects/muze.jpg";
 import socket_banking from "../assets/projects/socket-banking.jpg";
 import weatherhack from "../assets/projects/weatherhack.jpg";
 import javafx_shop from "../assets/projects/javafx-shop.jpg";
+import agviz from "../assets/projects/agviz.jpg";
 
 const technologies = [
   {
@@ -55,40 +56,54 @@ const technologies = [
 
 const projects = [
   {
+    name: "AgVis",
+    description:
+      "Agricultural visualization and analysis tool using public data provided by Merced County, CA to help mangage surplus resources.",
+    link: "https://agvis.biz",
+    technologies: ["NextJS", "React", "Typescript", "TailwindCSS", "Flask"],
+    image: agviz,
+  },
+  {
     name: "Muze",
-    description: "Music generative AI using Tensorflow and PyTorch with hyeprparameter tuning and model training using Ray.",
+    description:
+      "Music generative AI using Tensorflow and PyTorch with hyeprparameter tuning and model training using Ray.",
     link: "https://github.com/Chickeninvader/muze",
     technologies: ["Python", "Tensorflow", "PyTorch", "Ray", "Docker"],
     image: muze,
   },
+
   {
     name: "WeatherHack",
-    description: "Submission for sunhacks ASU, a weather app that integrates Firebase and OPenWeatherMap API to provide real-time weather updates and translations.",
+    description:
+      "Submission for sunhacks ASU, a weather app that integrates Firebase and OPenWeatherMap API to provide real-time weather updates and translations.",
     link: "https://github.com/davidgamingvn/weatherhack",
     technologies: ["JavaScript", "React", "Firebase", "Google Cloud"],
     image: weatherhack,
   },
   {
     name: "Dall-E Clone",
-    description: "Full-stack MERN app that uses OpenAI's Dall-E API to generate images based on user input and preferences, using Cloudinary for image storage and retrieval.",
+    description:
+      "Full-stack MERN app that uses OpenAI's Dall-E API to generate images based on user input and preferences, using Cloudinary for image storage and retrieval.",
     link: "https://github.com/davidgamingvn/dall-e-clone",
     technologies: ["MongoDB", "React", "OpenAI", "Cloudinary"],
     image: dall_e,
   },
   {
     name: "Socket Banking",
-    description: "Python socket programming project that simulates a banking system with a server and multiple clients, with support for multiple accounts and transactions implementing checkpointing-rollback algorithms for distributed systems.",
+    description:
+      "Python socket programming project that simulates a banking system with a server and multiple clients, with support for multiple accounts and transactions implementing checkpointing-rollback algorithms for distributed systems.",
     link: "https://github.com/davidgamingvn/CSE434SocketProject",
     technologies: ["Python", "Cryptography", "Distributed Systems"],
     image: socket_banking,
   },
   {
     name: "JavaFX Shopping Platform",
-    description: "Full-stack JavaFX app that simulates an online shopping platform with support for user authentication, product management, and cart management.",
+    description:
+      "Full-stack JavaFX app that simulates an online shopping platform with support for user authentication, product management, and cart management.",
     link: "https://github.com/davidgamingvn/JavaFX-Shopping-Platform",
     technologies: ["Java", "JavaFX", "MySQL", "CSS"],
     image: javafx_shop,
-  }
-]
+  },
+];
 
 export { technologies, projects };
