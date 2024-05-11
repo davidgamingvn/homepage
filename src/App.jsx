@@ -9,9 +9,9 @@ import { useCallback } from "react";
 import Header from "./components/Header";
 import Technologies from "./components/Technologies";
 import Projects from "./components/Projects";
-
 import particleOptions from "./utils/particle";
 import Contact from "./components/Contact";
+import Resume from "./components/Resume";
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -58,6 +58,7 @@ function App() {
 
         <Box>
           <Box style={{ zIndex: 1, position: "relative" }}>
+            <Resume></Resume>
             <Projects></Projects>
             <Spacer></Spacer>
             <Technologies></Technologies>

@@ -76,7 +76,7 @@ const projects = [
     name: "WeatherHack",
     description:
       "Submission for sunhacks ASU, a weather app that integrates Firebase and OPenWeatherMap API to provide real-time weather updates and translations.",
-    link: "https://github.com/davidgamingvn/weatherhack",
+    link: "https://www.weatherhack.study/",
     technologies: ["JavaScript", "React", "Firebase", "Google Cloud"],
     image: weatherhack,
   },
