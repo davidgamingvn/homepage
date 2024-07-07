@@ -14,6 +14,7 @@ import socket_banking from "../assets/projects/socket-banking.jpg";
 import weatherhack from "../assets/projects/weatherhack.jpg";
 import javafx_shop from "../assets/projects/javafx-shop.jpg";
 import agviz from "../assets/projects/agviz.jpg";
+import algoviz from "../assets/projects/algoviz.jpg";
 
 const technologies = [
   {
@@ -87,6 +88,14 @@ const projects = [
     link: "https://github.com/davidgamingvn/dall-e-clone",
     technologies: ["MongoDB", "React", "OpenAI", "Cloudinary"],
     image: dall_e,
+  },
+  {
+    name: "AlgoViz",
+    description:
+      "Flutter app that visualizes popular sorting and pathfinding algorithms.",
+    link: "https://github.com/davidgamingvn/algo_visualizer",
+    technologies: ["Flutter", "Dart", "Data Structures and Algorithms"],
+    image: algoviz,
   },
   {
     name: "Socket Banking",
