@@ -55,6 +55,44 @@ const technologies = [
   },
 ];
 
+const experiences = [
+  {
+    title: "AI Development Intern",
+    company: "fetchrocket",
+    duration: "Jul 2024 - Present",
+    description: `Developing an AI tool for summarizing academic materials. Utilized Pinecone for vector search, MySQL for database management, and integrated Google Gemini and OpenAI APIs for text summarization. Enhanced application performance by documenting bugs and reviewing code on GitHub.`,
+    location: "Safety Harbor, FL, USA",
+  },
+  {
+    title: "Software Engineer Intern",
+    company: "Ralli",
+    duration: "Apr 2024 - Present",
+    description: `Contributing to the Ralli mobile app using Flutter and FlutterFlow. Implemented a CI/CD pipeline with Ruby on AWS and integrated RunSignUp API. Migrated user data from Firebase to PostgreSQL for improved data management.`,
+    location: "Austin, TX, USA",
+  },
+  {
+    title: "Research Assistant",
+    company: "Arizona State University",
+    duration: "Jan 2024 - Present",
+    description: `Built a system for privacy-preserving calendar slot computation using MPC and PSI. Developed backend infrastructure with Python and Django, demonstrating advanced cryptographic techniques and enhancing secure multi-party collaboration.`,
+    location: "Tempe, AZ, USA",
+  },
+  {
+    title: "Sports Program Manager",
+    company: "Arizona State University",
+    duration: "Aug 2021 - Present",
+    description: `Managed ASU’s sports programs, increasing participant engagement by 25%. Coordinated events, conducted performance evaluations, and led cross-functional teams to streamline sports-related activities.`,
+    location: "Tempe, AZ, USA",
+  },
+  {
+    title: "Sports Program Supervisor",
+    company: "Arizona State University",
+    duration: "Aug 2021 - Jul 2022",
+    description: `Officiated various sports and managed logistics for clubs. Ensured access to equipment and practice spaces, supporting smooth operations for ASU’s sports program.`,
+    location: "Tempe, AZ, USA",
+  },
+];
+
 const projects = [
   {
     name: "FirmniFest",
@@ -123,4 +161,4 @@ const projects = [
   },
 ];
 
-export { projects, technologies };
+export { projects, technologies, experiences };
