@@ -1,4 +1,5 @@
 import css from "../assets/tech/css.png";
+import git from "../assets/tech/git.png";
 import html from "../assets/tech/html.png";
 import javascript from "../assets/tech/javascript.png";
 import mongodb from "../assets/tech/mongodb.png";
@@ -6,16 +7,15 @@ import nodejs from "../assets/tech/nodejs.png";
 import reactjs from "../assets/tech/reactjs.png";
 import tailwind from "../assets/tech/tailwind.png";
 import threejs from "../assets/tech/threejs.svg";
-import git from "../assets/tech/git.png";
 
+import agviz from "../assets/projects/agviz.jpg";
+import algoviz from "../assets/projects/algoviz.jpg";
 import dall_e from "../assets/projects/dall-e-clone.jpg";
+import firmnifest from "../assets/projects/firmnifest.jpg";
+import javafx_shop from "../assets/projects/javafx-shop.jpg";
 import muze from "../assets/projects/muze.jpg";
 import socket_banking from "../assets/projects/socket-banking.jpg";
 import weatherhack from "../assets/projects/weatherhack.jpg";
-import javafx_shop from "../assets/projects/javafx-shop.jpg";
-import agviz from "../assets/projects/agviz.jpg";
-import algoviz from "../assets/projects/algoviz.jpg";
-
 const technologies = [
   {
     name: "HTML 5",
@@ -56,6 +56,14 @@ const technologies = [
 ];
 
 const projects = [
+  {
+    name: "FirmniFest",
+    description:
+      "Mobile application that displays daily motivational quotes that helps you manifest your personal goals.",
+    link: "https://play.google.com/store/apps/details?id=com.firmnifest.neville_affirmation_app&hl=en",
+    technologies: ["Flutter", "Firebase", "Bloc", "Kotlin"],
+    image: firmnifest,
+  },
   {
     name: "AgVis",
     description:
@@ -115,4 +123,4 @@ const projects = [
   },
 ];
 
-export { technologies, projects };
+export { projects, technologies };
