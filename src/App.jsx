@@ -1,15 +1,26 @@
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import {
   IconButton,
   VStack,
   Flex,
   Box,
   Button,
-  useDisclosure,
   useColorMode,
-  Tooltip,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure,
+  useBreakpointValue,
 } from "@chakra-ui/react";
-import { MoonIcon, SunIcon, ArrowUpIcon } from "@chakra-ui/icons";
+import {
+  MoonIcon,
+  SunIcon,
+  ArrowUpIcon,
+  HamburgerIcon,
+} from "@chakra-ui/icons";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import Header from "./components/Header";
@@ -35,6 +46,69 @@ function App() {
   const technologiesRef = useRef(null);
   const resumeRef = useRef(null);
   const topRef = useRef(null);
+
+  // Drawer state
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // Determine if we should show the full navbar or the hamburger menu
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
+  // Function to handle navigation and close drawer on mobile
+  const handleNavClick = (ref) => {
+    // Close the drawer first if on mobile
+    if (isMobile) {
+      onClose();
+    }
+    // Use setTimeout to ensure the drawer closing animation doesn't interfere with scrolling
+    setTimeout(() => {
+      ref.current?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
+  const NavContent = ({ isMobile }) => (
+    <VStack align={isMobile ? "stretch" : "center"} spacing={4}>
+      <Button
+        variant="link"
+        onClick={() => handleNavClick(experienceRef)}
+        justifyContent={isMobile ? "flex-start" : "center"}
+        width="100%"
+      >
+        Experience
+      </Button>
+      <Button
+        variant="link"
+        onClick={() => handleNavClick(projectsRef)}
+        justifyContent={isMobile ? "flex-start" : "center"}
+        width="100%"
+      >
+        Projects
+      </Button>
+      <Button
+        variant="link"
+        onClick={() => handleNavClick(contactRef)}
+        justifyContent={isMobile ? "flex-start" : "center"}
+        width="100%"
+      >
+        Contact
+      </Button>
+      <Button
+        variant="link"
+        onClick={() => handleNavClick(technologiesRef)}
+        justifyContent={isMobile ? "flex-start" : "center"}
+        width="100%"
+      >
+        Technologies
+      </Button>
+      <Button
+        variant="link"
+        onClick={() => handleNavClick(resumeRef)}
+        justifyContent={isMobile ? "flex-start" : "center"}
+        width="100%"
+      >
+        Resume
+      </Button>
+    </VStack>
+  );
 
   return (
     <div ref={topRef} id="top" className="App">
@@ -65,52 +139,20 @@ function App() {
           left={0}
           backdropFilter="blur(10px)"
         >
-          <Box>
-            <Flex gap={7} align="center" justifyContent="center" ml={4}>
-              <Button
-                variant="link"
-                onClick={() =>
-                  experienceRef.current?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Experience
-              </Button>
-              <Button
-                variant="link"
-                onClick={() =>
-                  projectsRef.current?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Projects
-              </Button>
-              <Button
-                variant="link"
-                onClick={() =>
-                  contactRef.current?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Contact
-              </Button>
-              <Button
-                variant="link"
-                onClick={() =>
-                  technologiesRef.current?.scrollIntoView({
-                    behavior: "smooth",
-                  })
-                }
-              >
-                Technologies
-              </Button>
-              <Button
-                variant="link"
-                onClick={() =>
-                  resumeRef.current?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Resume
-              </Button>
-            </Flex>
-          </Box>
+          {isMobile ? (
+            <IconButton
+              icon={<HamburgerIcon />}
+              onClick={onOpen}
+              aria-label="Open Menu"
+              variant="ghost"
+            />
+          ) : (
+            <Box>
+              <Flex gap={7} align="center" justifyContent="center" ml={4}>
+                <NavContent isMobile={false} />
+              </Flex>
+            </Box>
+          )}
           <Flex align="center" gap={5}>
             <IconButton
               icon={isDark ? <SunIcon /> : <MoonIcon />}
@@ -123,13 +165,12 @@ function App() {
           </Flex>
         </Flex>
         <Box mt={16}>
-          {/* Ensure main content doesn't overlap with fixed navbar */}
           <Header />
         </Box>
       </VStack>
 
       <Box gap={4} style={{ zIndex: 1, position: "relative" }}>
-        <div ref={topRef} /> {/* Ref for the top of the page */}
+        <div ref={topRef} />
         <div ref={resumeRef} id="resume">
           <Resume />
         </div>
@@ -151,14 +192,23 @@ function App() {
         <IconButton
           variant="ghost"
           icon={<ArrowUpIcon />}
-          onClick={() => {
-            topRef.current?.scrollIntoView({ behavior: "smooth" });
-          }}
+          onClick={() => handleNavClick(topRef)}
           size="lg"
           boxShadow="md"
           _hover={{ bg: isDark ? "gray.700" : "gray.200" }}
         />
       </Flex>
+
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Menu</DrawerHeader>
+          <DrawerBody>
+            <NavContent isMobile={true} />
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </div>
   );
 }
