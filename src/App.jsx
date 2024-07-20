@@ -2,6 +2,7 @@ import React, { useCallback, useRef, useState } from "react";
 import {
   IconButton,
   VStack,
+  HStack,
   Flex,
   Box,
   Button,
@@ -65,49 +66,50 @@ function App() {
     }, 100);
   };
 
-  const NavContent = ({ isMobile }) => (
-    <VStack align={isMobile ? "stretch" : "center"} spacing={4}>
-      <Button
-        variant="link"
-        onClick={() => handleNavClick(experienceRef)}
-        justifyContent={isMobile ? "flex-start" : "center"}
-        width="100%"
-      >
-        Experience
-      </Button>
-      <Button
-        variant="link"
-        onClick={() => handleNavClick(projectsRef)}
-        justifyContent={isMobile ? "flex-start" : "center"}
-        width="100%"
-      >
-        Projects
-      </Button>
-      <Button
-        variant="link"
-        onClick={() => handleNavClick(contactRef)}
-        justifyContent={isMobile ? "flex-start" : "center"}
-        width="100%"
-      >
-        Contact
-      </Button>
-      <Button
-        variant="link"
-        onClick={() => handleNavClick(technologiesRef)}
-        justifyContent={isMobile ? "flex-start" : "center"}
-        width="100%"
-      >
-        Technologies
-      </Button>
-      <Button
-        variant="link"
-        onClick={() => handleNavClick(resumeRef)}
-        justifyContent={isMobile ? "flex-start" : "center"}
-        width="100%"
-      >
-        Resume
-      </Button>
-    </VStack>
+  const NavContent = ({ isMobile }) =>
+    isMobile ? (
+      <VStack align="flex-start" spacing={4}>
+        <NavButton onClick={() => handleNavClick(experienceRef)}>
+          Experience
+        </NavButton>
+        <NavButton onClick={() => handleNavClick(projectsRef)}>
+          Projects
+        </NavButton>
+        <NavButton onClick={() => handleNavClick(contactRef)}>
+          Contact
+        </NavButton>
+        <NavButton onClick={() => handleNavClick(technologiesRef)}>
+          Technologies
+        </NavButton>
+        <NavButton onClick={() => handleNavClick(resumeRef)}>Resume</NavButton>
+      </VStack>
+    ) : (
+      <HStack alignContent="baseline" align="flex-start" ml={4} spacing={7}>
+        <NavButton onClick={() => handleNavClick(experienceRef)}>
+          Experience
+        </NavButton>
+        <NavButton onClick={() => handleNavClick(projectsRef)}>
+          Projects
+        </NavButton>
+        <NavButton onClick={() => handleNavClick(contactRef)}>
+          Contact
+        </NavButton>
+        <NavButton onClick={() => handleNavClick(technologiesRef)}>
+          Technologies
+        </NavButton>
+        <NavButton onClick={() => handleNavClick(resumeRef)}>Resume</NavButton>
+      </HStack>
+    );
+
+  const NavButton = ({ children, onClick }) => (
+    <Button
+      variant="link"
+      onClick={onClick}
+      justifyContent="center"
+      width="auto"
+    >
+      {children}
+    </Button>
   );
 
   return (
@@ -147,11 +149,7 @@ function App() {
               variant="ghost"
             />
           ) : (
-            <Box>
-              <Flex gap={7} align="center" justifyContent="center" ml={4}>
-                <NavContent isMobile={false} />
-              </Flex>
-            </Box>
+            <NavContent isMobile={false} />
           )}
           <Flex align="center" gap={5}>
             <IconButton
@@ -199,7 +197,7 @@ function App() {
         />
       </Flex>
 
-      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+      <Drawer size="xs" isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
