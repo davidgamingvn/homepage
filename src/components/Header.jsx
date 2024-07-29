@@ -12,11 +12,8 @@ import {
 } from "@chakra-ui/react";
 import avatar from "../assets/avatar.jpg";
 import { HStack } from "@chakra-ui/layout";
-import { chakra } from "@chakra-ui/react";
-import { motion, isValidMotionProp } from "framer-motion";
-import { fadeIn, textVariant } from "../utils/motion";
 
-import Icon from "@chakra-ui/icon";
+import { Icon } from "@chakra-ui/react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { useMediaQuery } from "@chakra-ui/react";
 const Header = () => {
