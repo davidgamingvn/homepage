@@ -16,6 +16,7 @@ import javafx_shop from "../assets/projects/javafx-shop.jpg";
 import muze from "../assets/projects/muze.jpg";
 import socket_banking from "../assets/projects/socket-banking.jpg";
 import weatherhack from "../assets/projects/weatherhack.jpg";
+import apath from "../assets/projects/apath.jpg";
 const technologies = [
   {
     name: "HTML 5",
@@ -94,6 +95,14 @@ const experiences = [
 ];
 
 const projects = [
+  {
+    name: "APath",
+    description:
+      "Web application that helps users edit and cater their resume to specific jobs and career goals.",
+    link: "https://frontend-583938538589.us-central1.run.app",
+    technologies: ["NextJS", "Django", "Docker", "GCP"],
+    image: apath,
+  },
   {
     name: "FirmniFest",
     description:
