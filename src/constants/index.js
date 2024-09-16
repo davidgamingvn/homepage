@@ -10,13 +10,14 @@ import threejs from "../assets/tech/threejs.svg";
 
 import agviz from "../assets/projects/agviz.jpg";
 import algoviz from "../assets/projects/algoviz.jpg";
+import apath from "../assets/projects/apath.jpg";
 import dall_e from "../assets/projects/dall-e-clone.jpg";
 import firmnifest from "../assets/projects/firmnifest.jpg";
 import javafx_shop from "../assets/projects/javafx-shop.jpg";
 import muze from "../assets/projects/muze.jpg";
 import socket_banking from "../assets/projects/socket-banking.jpg";
 import weatherhack from "../assets/projects/weatherhack.jpg";
-import apath from "../assets/projects/apath.jpg";
+import copperlens from "../assets/projects/copperlens.jpg";
 const technologies = [
   {
     name: "HTML 5",
@@ -96,6 +97,14 @@ const experiences = [
 
 const projects = [
   {
+    name: "CopperLens",
+    description:
+      "Web application that provides a platform for users to share and discover latest knowledge and news about the Arizona mining industry. Submission for ASU's SparkChallenge Hackathon, with a focus on sustainability and innovation.",
+    link: "https://sparkchallenge-nextjs-frontend-583938538589.us-central1.run.app/",
+    technologies: ["NextJS", "Flask", "Langchain", "PineconeDB", "GCP"],
+    image: copperlens,
+  },
+  {
     name: "APath",
     description:
       "Web application that helps users edit and cater their resume to specific jobs and career goals.",
@@ -170,4 +179,4 @@ const projects = [
   },
 ];
 
-export { projects, technologies, experiences };
+export { experiences, projects, technologies };
