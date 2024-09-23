@@ -1,62 +1,14 @@
-import css from "../assets/tech/css.png";
-import git from "../assets/tech/git.png";
-import html from "../assets/tech/html.png";
-import javascript from "../assets/tech/javascript.png";
-import mongodb from "../assets/tech/mongodb.png";
-import nodejs from "../assets/tech/nodejs.png";
-import reactjs from "../assets/tech/reactjs.png";
-import tailwind from "../assets/tech/tailwind.png";
-import threejs from "../assets/tech/threejs.svg";
-
 import agviz from "../assets/projects/agviz.jpg";
 import algoviz from "../assets/projects/algoviz.jpg";
 import apath from "../assets/projects/apath.jpg";
+import copperlens from "../assets/projects/copperlens.jpg";
 import dall_e from "../assets/projects/dall-e-clone.jpg";
 import firmnifest from "../assets/projects/firmnifest.jpg";
 import javafx_shop from "../assets/projects/javafx-shop.jpg";
+import learnix from "../assets/projects/learnix.jpg";
 import muze from "../assets/projects/muze.jpg";
 import socket_banking from "../assets/projects/socket-banking.jpg";
 import weatherhack from "../assets/projects/weatherhack.jpg";
-import copperlens from "../assets/projects/copperlens.jpg";
-const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-];
-
 const experiences = [
   {
     title: "AI Development Intern",
@@ -96,6 +48,22 @@ const experiences = [
 ];
 
 const projects = [
+  {
+    name: "Learnix",
+    description:
+      "Web application that helps students learn and practice Linux fundamentals through an interactive terminal session and MDX rendered learning content.",
+    link: "http://35.225.39.137/",
+    technologies: [
+      "Vite + React",
+      "Flask",
+      "Auth0",
+      "MongoDB",
+      "Docker",
+      "GCP",
+      "Terraform",
+    ],
+    image: learnix,
+  },
   {
     name: "CopperLens",
     description:
@@ -179,4 +147,4 @@ const projects = [
   },
 ];
 
-export { experiences, projects, technologies };
+export { experiences, projects };
