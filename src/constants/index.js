@@ -8,7 +8,9 @@ import javafx_shop from "../assets/projects/javafx-shop.jpg";
 import learnix from "../assets/projects/learnix.jpg";
 import muze from "../assets/projects/muze.jpg";
 import socket_banking from "../assets/projects/socket-banking.jpg";
+import teamup from "../assets/projects/teamup.jpg";
 import weatherhack from "../assets/projects/weatherhack.jpg";
+
 const experiences = [
   {
     title: "AI Development Intern",
@@ -48,6 +50,14 @@ const experiences = [
 ];
 
 const projects = [
+  {
+    name: "TeamUp",
+    description:
+      "Web application that helps hackers at hackathons to form teams based on individual skills, goals, and experiences.",
+    link: "https://github.com/Blank-FS/team-up",
+    technologies: ["NextJS", "MongoDB", "Netlify", "Auth0"],
+    image: teamup,
+  },
   {
     name: "Learnix",
     description:
