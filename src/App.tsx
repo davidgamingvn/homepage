@@ -15,12 +15,18 @@ import {
   DrawerCloseButton,
   useDisclosure,
   useBreakpointValue,
+  Tooltip,
 } from "@chakra-ui/react";
 import {
   MoonIcon,
   SunIcon,
   ArrowUpIcon,
   HamburgerIcon,
+  InfoIcon,
+  AtSignIcon,
+  CalendarIcon,
+  EditIcon,
+  AttachmentIcon,
 } from "@chakra-ui/icons";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
@@ -31,22 +37,23 @@ import particleOptions from "./utils/particle";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
 import Experience from "./components/Experience";
+import { Engine } from "tsparticles-engine";
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
   const options = particleOptions;
-  const particlesInit = useCallback(async (engine) => {
+  const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
 
   // Create refs for each section
-  const experienceRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
-  const technologiesRef = useRef(null);
-  const resumeRef = useRef(null);
-  const topRef = useRef(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+  const technologiesRef = useRef<HTMLDivElement>(null);
+  const resumeRef = useRef<HTMLDivElement>(null);
+  const topRef = useRef<HTMLDivElement>(null);
 
   // Drawer state
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -55,7 +62,9 @@ function App() {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   // Function to handle navigation and close drawer on mobile
-  const handleNavClick = (ref) => {
+  const handleNavClick = (
+    ref: React.MutableRefObject<HTMLDivElement | null>
+  ) => {
     // Close the drawer first if on mobile
     if (isMobile) {
       onClose();
@@ -66,7 +75,7 @@ function App() {
     }, 100);
   };
 
-  const NavContent = ({ isMobile }) =>
+  const NavContent = ({ isMobile }: { isMobile: boolean }) =>
     isMobile ? (
       <VStack align="flex-start" spacing={4}>
         <NavButton onClick={() => handleNavClick(experienceRef)}>
@@ -86,22 +95,60 @@ function App() {
     ) : (
       <HStack alignContent="baseline" align="flex-start" ml={4} spacing={7}>
         <NavButton onClick={() => handleNavClick(experienceRef)}>
-          Experience
+          <Tooltip
+            placement="bottom-end"
+            label="See my past professional experiences"
+            aria-label="experiences"
+          >
+            Experiences
+          </Tooltip>
         </NavButton>
         <NavButton onClick={() => handleNavClick(projectsRef)}>
-          Projects
+          <Tooltip
+            placement="bottom"
+            label="View my projects"
+            aria-label="projects"
+          >
+            Projects
+          </Tooltip>
         </NavButton>
         <NavButton onClick={() => handleNavClick(contactRef)}>
-          Contact
+          <Tooltip
+            placement="bottom"
+            label="Get in touch with me"
+            aria-label="contact"
+          >
+            Contact
+          </Tooltip>
         </NavButton>
         <NavButton onClick={() => handleNavClick(technologiesRef)}>
-          Technologies
+          <Tooltip
+            placement="bottom"
+            label="Explore the technologies I use"
+            aria-label="technologies"
+          >
+            Technologies
+          </Tooltip>
         </NavButton>
-        <NavButton onClick={() => handleNavClick(resumeRef)}>Resume</NavButton>
+        <NavButton onClick={() => handleNavClick(resumeRef)}>
+          <Tooltip
+            placement="bottom"
+            label="View my resume"
+            aria-label="resume"
+          >
+            Resume
+          </Tooltip>
+        </NavButton>
       </HStack>
     );
 
-  const NavButton = ({ children, onClick }) => (
+  const NavButton = ({
+    children,
+    onClick,
+  }: {
+    children: React.ReactNode;
+    onClick: () => void;
+  }) => (
     <Button
       variant="link"
       onClick={onClick}
@@ -182,7 +229,9 @@ function App() {
           <Technologies />
         </div>
         <div ref={contactRef} id="contact">
-          <Contact />
+          <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+            <Contact />
+          </div>
         </div>
       </Box>
 
@@ -194,6 +243,7 @@ function App() {
           size="lg"
           boxShadow="md"
           _hover={{ bg: isDark ? "gray.700" : "gray.200" }}
+          aria-label="scroll to top"
         />
       </Flex>
 

@@ -11,7 +11,23 @@ import socket_banking from "../assets/projects/socket-banking.jpg";
 import teamup from "../assets/projects/teamup.jpg";
 import weatherhack from "../assets/projects/weatherhack.jpg";
 
-const experiences = [
+export interface Experience {
+  title: string;
+  company: string;
+  duration: string;
+  description: string;
+  location: string;
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  link: string;
+  technologies: string[];
+  image: string;
+}
+
+const experiences : Experience[] = [
   {
     title: "AI Development Intern",
     company: "fetchrocket",
@@ -49,7 +65,7 @@ const experiences = [
   },
 ];
 
-const projects = [
+const projects : Project[] = [
   {
     name: "TeamUp",
     description:

@@ -16,6 +16,7 @@ import { HStack } from "@chakra-ui/layout";
 import { Icon } from "@chakra-ui/react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { useMediaQuery } from "@chakra-ui/react";
+import BlurIn from "./ui/blur-in";
 const Header = () => {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
@@ -37,7 +38,10 @@ const Header = () => {
             Hi, I am
           </Text>
           <Heading fontSize="5xl" fontWeight="bold" align="center">
-            David Nguyen
+            <BlurIn
+              word="David Nguyen"
+              className="text-black dark:text-white"
+            />
           </Heading>
           <Text fontSize="xl" fontWeight="light" mt="3" align="center">
             Computer Science student at

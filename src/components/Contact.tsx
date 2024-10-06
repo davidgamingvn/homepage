@@ -27,6 +27,7 @@ import { useColorMode } from "@chakra-ui/color-mode";
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { BsGithub, BsLinkedin, BsPerson } from "react-icons/bs";
+import { BorderBeam } from "./ui/border-beam";
 
 const Contact = () => {
   const form = useRef();
@@ -82,6 +83,7 @@ const Contact = () => {
 
   return (
     <Container maxW="full">
+
       <Flex>
         <Box
           color="white"

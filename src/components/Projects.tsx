@@ -1,24 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
-import { useColorMode } from "@chakra-ui/color-mode";
 import {
-  Heading,
-  Grid,
-  Container,
   Box,
-  useBreakpointValue,
+  Container,
+  Grid,
+  Heading,
   IconButton,
+  useBreakpointValue,
   VStack,
 } from "@chakra-ui/react";
-import { projects } from "../constants";
-import ProjectCard from "./ProjectCard";
-import Slider from "react-slick";
+import { useState } from "react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import Slider from "react-slick";
+import { projects } from "@/constants";
+import ProjectCard from "./ProjectCard";
+import BlurFade from "./ui/blur-fade";
 
 // Import CSS for react-slick
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 const Projects = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -92,8 +92,10 @@ const Projects = () => {
               lg: "repeat(3, 1fr)",
             }}
           >
-            {projects.map((project) => (
-              <ProjectCard project={project} key={project.name} />
+            {projects.map((project, idx : number) => (
+              <BlurFade key={project.name} delay={0.25 + idx * 0.05} inView>
+                <ProjectCard project={project} key={project.name} />
+              </BlurFade>
             ))}
           </Grid>
         )}
