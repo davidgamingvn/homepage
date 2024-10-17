@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef } from "react";
 import {
   IconButton,
   VStack,
@@ -22,11 +22,6 @@ import {
   SunIcon,
   ArrowUpIcon,
   HamburgerIcon,
-  InfoIcon,
-  AtSignIcon,
-  CalendarIcon,
-  EditIcon,
-  AttachmentIcon,
 } from "@chakra-ui/icons";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
@@ -36,8 +31,8 @@ import Projects from "./components/Projects";
 import particleOptions from "./utils/particle";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
-import Experience from "./components/Experience";
 import { Engine } from "tsparticles-engine";
+import ExperienceTimeline from "./components/ExperienceTimeline";
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -220,7 +215,7 @@ function App() {
           <Resume />
         </div>
         <div ref={experienceRef} id="experience">
-          <Experience />
+          <ExperienceTimeline />
         </div>
         <div ref={projectsRef} id="projects">
           <Projects />

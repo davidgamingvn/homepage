@@ -22,7 +22,7 @@ import "slick-carousel/slick/slick.css";
 
 const Projects = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
-  const [slider, setSlider] = useState(null);
+  const [slider, setSlider] = useState<Slider | null>(null);
 
   const settings = {
     dots: true,

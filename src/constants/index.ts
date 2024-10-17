@@ -10,12 +10,14 @@ import muze from "../assets/projects/muze.jpg";
 import socket_banking from "../assets/projects/socket-banking.jpg";
 import teamup from "../assets/projects/teamup.jpg";
 import weatherhack from "../assets/projects/weatherhack.jpg";
+import scheduler from "../assets/projects/scheduler.jpg";
 
 export interface Experience {
+  id: number;
   title: string;
   company: string;
   duration: string;
-  description: string;
+  description: string[];
   location: string;
 }
 
@@ -27,45 +29,85 @@ export interface Project {
   image: string;
 }
 
-const experiences : Experience[] = [
+const experiences: Experience[] = [
   {
-    title: "AI Development Intern",
+    id: 1,
+    title: "Software Development Intern",
     company: "fetchrocket",
     duration: "Jul 2024 - Present",
-    description: `Developing an AI tool for summarizing academic materials. Utilized Pinecone for vector search, MySQL for database management, and integrated Google Gemini and OpenAI APIs for text summarization. Enhanced application performance by documenting bugs and reviewing code on GitHub.`,
+    description: [
+      "Developing an AI tool for summarizing academic materials.",
+      "Utilized Pinecone for vector search, MySQL for database management.",
+      "Integrated Google Gemini and OpenAI APIs for text summarization.",
+      "Developed new 'Quiz' features for the application that helps students review materials through quiz flashcards.",
+    ],
     location: "Safety Harbor, FL, USA",
   },
   {
+    id: 2,
     title: "Software Engineer Intern",
     company: "Ralli",
     duration: "Apr 2024 - Present",
-    description: `Contributing to the Ralli mobile app using Flutter and FlutterFlow. Implemented a CI/CD pipeline with Ruby on AWS and integrated RunSignUp API. Migrated user data from Firebase to PostgreSQL for improved data management.`,
+    description: [
+      "Contributing to the Ralli mobile app using Flutter and FlutterFlow.",
+      "Implemented a CI/CD pipeline with Ruby on AWS and integrated RunSignUp API.",
+      "Migrated user data from Firebase to PostgreSQL for improved data management.",
+    ],
     location: "Austin, TX, USA",
   },
   {
+    id: 3,
     title: "Research Assistant",
     company: "Arizona State University",
     duration: "Jan 2024 - Present",
-    description: `Built a system for privacy-preserving calendar slot computation using MPC and PSI. Developed backend infrastructure with Python and Django, demonstrating advanced cryptographic techniques and enhancing secure multi-party collaboration.`,
+    description: [
+      "Built a system for privacy-preserving calendar slot computation using MPC and PSI.",
+      "Developed backend infrastructure with Python and Django.",
+      "Demonstrated advanced cryptographic techniques and enhancing secure multi-party collaboration.",
+    ],
     location: "Tempe, AZ, USA",
   },
   {
+    id: 4,
     title: "Sports Program Manager",
     company: "Arizona State University",
     duration: "Aug 2021 - Present",
-    description: `Managed ASU’s sports programs, increasing participant engagement by 25%. Coordinated events, conducted performance evaluations, and led cross-functional teams to streamline sports-related activities.`,
+    description: [
+      "Managed ASU’s sports programs, increasing participant engagement by 25%.",
+      "Coordinated events, conducted performance evaluations.",
+      "Led cross-functional teams to streamline sports-related activities.",
+    ],
     location: "Tempe, AZ, USA",
   },
   {
+    id: 5,
     title: "Sports Program Supervisor",
     company: "Arizona State University",
     duration: "Aug 2021 - Jul 2022",
-    description: `Officiated various sports and managed logistics for clubs. Ensured access to equipment and practice spaces, supporting smooth operations for ASU’s sports program.`,
+    description: [
+      "Officiated various sports and managed logistics for clubs.",
+      "Ensured access to equipment and practice spaces.",
+      "Supported smooth operations for ASU’s sports program.",
+    ],
     location: "Tempe, AZ, USA",
   },
 ];
 
-const projects : Project[] = [
+const projects: Project[] = [
+  {
+    name: "Scheduler",
+    description:
+      "AI assisted tool that helps students better manage their time doing homeworks by populating their schedule based on their skills, needs, and time constraints.",
+    link: "https://devpost.com/software/scheduler-zmlngu",
+    technologies: [
+      "NextJS",
+      "MongoDB",
+      "Atlas Vector Search",
+      "Intel Tiber Cloud",
+      "Auth0",
+    ],
+    image: scheduler,
+  },
   {
     name: "TeamUp",
     description:
