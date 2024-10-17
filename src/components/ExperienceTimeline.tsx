@@ -158,7 +158,7 @@ const Card = ({
                   }}
                   viewport={{ once: true }}
                 >
-                  <ListItem fontSize="md">{desc}</ListItem>
+                  <ListItem fontSize="md" padding={1}>{desc}</ListItem>
                 </motion.div>
               ))}
             </UnorderedList>

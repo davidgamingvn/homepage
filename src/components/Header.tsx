@@ -1,22 +1,40 @@
-import React from "react";
 import { useColorMode } from "@chakra-ui/color-mode";
+import { HStack } from "@chakra-ui/layout";
 import {
-  Flex,
-  Stack,
-  Circle,
   Box,
-  Text,
-  Image,
-  Heading,
   Button,
+  Circle,
+  Flex,
+  Heading,
+  Image,
+  Stack,
+  Text,
 } from "@chakra-ui/react";
 import avatar from "../assets/avatar.jpg";
-import { HStack } from "@chakra-ui/layout";
-
-import { Icon } from "@chakra-ui/react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { useMediaQuery } from "@chakra-ui/react";
+import { Icon, useMediaQuery } from "@chakra-ui/react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import BlurIn from "./ui/blur-in";
+import { motion } from "framer-motion";
+
+// Define the animation for the waving hand
+const waveAnimation = {
+  initial: { rotate: 0 },
+  animate: {
+    rotate: [0, 14, -8, 14, -4, 10, 0],
+    transition: {
+      duration: 2,
+      ease: "easeInOut",
+      repeat: 1,
+    },
+  },
+};
+
+const blurInAnimation = {
+  initial: { opacity: 0, filter: "blur(10px)" },
+  animate: { opacity: 1, filter: "blur(0px)" },
+  transition: { duration: 1, ease: "easeOut" },
+};
+
 const Header = () => {
   const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
@@ -35,16 +53,22 @@ const Header = () => {
       >
         <Box mt={isNotSmallerScreen ? "0" : "5"} align="flex-start">
           <Text fontSize="5xl" align="center">
-            Hi, I am
+            Hi
+            <motion.span
+              initial="initial"
+              animate="animate"
+              variants={waveAnimation}
+              style={{ display: "inline-block", transformOrigin: "70% 70%" }}
+            >
+              👋
+            </motion.span>
+            , I am
           </Text>
           <Heading fontSize="5xl" fontWeight="bold" align="center">
-            <BlurIn
-              word="David Nguyen"
-              className="text-black dark:text-white"
-            />
+            David Nguyen
           </Heading>
-          <Text fontSize="xl" fontWeight="light" mt="3" align="center">
-            Computer Science student at
+          <Text fontSize="3xl" fontWeight="normal" mt="3" align="center">
+            Full-stack Developer
             <Flex
               direction={isNotSmallerScreen ? "row" : "column"}
               spacing="200px"
