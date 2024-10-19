@@ -24,21 +24,15 @@ const ExperienceTimeline = () => {
       <chakra.h3 fontSize="4xl" fontWeight="bold" mb={18} textAlign="center">
         Experiences
       </chakra.h3>
-      {experiences.map((milestone, index) => (
-        <motion.div
-          key={milestone.id}
-          initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.2 }}
-          viewport={{ once: true }}
-        >
+      {experiences.map((experience, index) => (
+        
           <Flex mb="10px">
             {/* Desktop view(left card) */}
-            {isDesktop && milestone.id % 2 === 0 && (
+            {isDesktop && experience.id % 2 === 0 && (
               <>
                 <EmptyCard />
                 <LineWithDot />
-                <Card {...milestone} />
+                <Card {...experience} />
               </>
             )}
 
@@ -46,20 +40,19 @@ const ExperienceTimeline = () => {
             {isMobile && (
               <>
                 <LineWithDot />
-                <Card {...milestone} />
+                <Card {...experience} />
               </>
             )}
 
             {/* Desktop view(right card) */}
-            {isDesktop && milestone.id % 2 !== 0 && (
+            {isDesktop && experience.id % 2 !== 0 && (
               <>
-                <Card {...milestone} />
+                <Card {...experience} />
                 <LineWithDot />
                 <EmptyCard />
               </>
             )}
           </Flex>
-        </motion.div>
       ))}
     </Container>
   );
@@ -93,7 +86,7 @@ const Card = ({
   if (isMobile) {
     leftValue = "-15px";
     rightValue = "unset";
-    borderWidthValue = "15px 15px 15px 0";
+    borderWidthValue = "15px 20px 15px 0";
   }
 
   return (
@@ -120,6 +113,7 @@ const Card = ({
         right: rightValue,
         display: "block",
       }}
+      maxW={{ base: "80%" }}
     >
       <Box>
         <motion.div
@@ -136,7 +130,14 @@ const Card = ({
           </Text>
         </motion.div>
         <VStack spacing={2} mb={3} textAlign="left">
-          <chakra.h1 fontSize="2xl" lineHeight={1.2} paddingTop={3} paddingBottom={3} fontWeight="bold" w="100%">
+          <chakra.h1
+            fontSize="2xl"
+            lineHeight={1.2}
+            paddingTop={3}
+            paddingBottom={3}
+            fontWeight="bold"
+            w="100%"
+          >
             {title}
           </chakra.h1>
           <motion.div
@@ -158,7 +159,9 @@ const Card = ({
                   }}
                   viewport={{ once: true }}
                 >
-                  <ListItem fontSize="md" padding={1}>{desc}</ListItem>
+                  <ListItem fontSize="md" padding={1}>
+                    {desc}
+                  </ListItem>
                 </motion.div>
               ))}
             </UnorderedList>
@@ -174,7 +177,7 @@ const LineWithDot = () => {
     <Flex
       pos="relative"
       alignItems="center"
-      mr={{ base: "40px", md: "40px" }}
+      mr={{ base: "25px", md: "40px" }}
       ml={{ base: "0", md: "40px" }}
     >
       <chakra.span
