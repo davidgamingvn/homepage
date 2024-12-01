@@ -7,10 +7,11 @@ import firmnifest from "../assets/projects/firmnifest.jpg";
 import javafx_shop from "../assets/projects/javafx-shop.jpg";
 import learnix from "../assets/projects/learnix.jpg";
 import muze from "../assets/projects/muze.jpg";
+import scheduler from "../assets/projects/scheduler.jpg";
 import socket_banking from "../assets/projects/socket-banking.jpg";
 import teamup from "../assets/projects/teamup.jpg";
 import weatherhack from "../assets/projects/weatherhack.jpg";
-import scheduler from "../assets/projects/scheduler.jpg";
+import frontier from "../assets/projects/frontier.jpg";
 
 export interface Experience {
   id: number;
@@ -94,6 +95,23 @@ const experiences: Experience[] = [
 ];
 
 const projects: Project[] = [
+  {
+    name: "FrontierMap",
+    description:
+      "Mobile and web application that helps Frontier ISP users optimize their home network setup by identifying the best locations for wifi extenders using AR scanning and least optimal distance algorithms.",
+    link: "https://frontiermap.tech",
+    technologies: [
+      "UIKit",
+      "OpenCV",
+      "Numpy",
+      "Docker",
+      "Google Cloud Run",
+      "NextJS",
+      "TailwindCSS",
+      "Vercel",
+    ],
+    image: frontier,
+  },
   {
     name: "Scheduler",
     description:
