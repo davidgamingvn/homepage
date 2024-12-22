@@ -1,29 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { Flex, Button, Box } from "@chakra-ui/react";
-import { ViewIcon, ViewOffIcon, DownloadIcon } from "@chakra-ui/icons";
 import { useColorMode } from "@chakra-ui/color-mode";
-import getResumeFromOneDrive from "../utils/fetchOneDrive";
+import { DownloadIcon, ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { Button, Flex } from "@chakra-ui/react";
+import { useState } from "react";
 
 const Resume = () => {
   const [showPdf, setShowPdf] = useState(false);
-  const [resumeUrl, setResumeUrl] = useState(null);
-  const [downloadUrl, setDownloadUrl] = useState(null)
+  const resumeUrl =
+    "https://drive.google.com/file/d/1KM4KVbgXgcLUVTKak78oylwFy_tOkzLl/preview";
+  const downloadUrl =
+    "https://drive.usercontent.google.com/u/0/uc?id=1KM4KVbgXgcLUVTKak78oylwFy_tOkzLl&export=download";
   const { colorMode } = useColorMode();
 
   const bgColor = {
     light: "transparent", // background color when light color mode
     dark: "white", // background color when dark color mode
   };
-
-  useEffect(() => {
-    const fetchResume = async () => {
-      const [resumeUrl, downloadUrl] = await getResumeFromOneDrive();
-      setResumeUrl(resumeUrl);
-      setDownloadUrl(downloadUrl);
-    };
-
-    fetchResume();
-  }, []);
 
   return (
     <div>
@@ -35,7 +26,7 @@ const Resume = () => {
           Resume
         </Button>
       </Flex>
-      {showPdf && resumeUrl && (
+      {showPdf && (
         <Flex
           direction={{ base: "column", md: "row", lg: "row" }}
           justifyContent="center"
@@ -55,7 +46,7 @@ const Resume = () => {
             src={resumeUrl}
             width="100%"
             height="100%"
-            allowfullscreen
+            allowFullScreen
             title="Phuc_Nguyen_Resume"
           ></iframe>
         </Flex>
