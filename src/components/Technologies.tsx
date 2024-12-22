@@ -21,6 +21,7 @@ import {
   FaGitAlt,
   FaSwift,
   FaMobile,
+  FaLinux,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -45,11 +46,21 @@ import {
   SiTensorflow,
   SiOpencv,
   SiJupyter,
+  SiTerraform,
+  SiVisualstudio,
 } from "react-icons/si";
 
 const MotionBox = motion(Box);
 
-const TechnologyCard = ({ icon: Icon, name }) => {
+interface TechnologyCardProps {
+  icon: React.ElementType;
+  name: string;
+}
+
+const TechnologyCard: React.FC<TechnologyCardProps> = ({
+  icon: Icon,
+  name,
+}) => {
   const bg = useColorModeValue("white", "gray.800");
   const hoverBg = useColorModeValue("gray.100", "gray.700");
   const iconColor = useColorModeValue("gray.600", "gray.200");
@@ -82,12 +93,20 @@ const TechnologyCard = ({ icon: Icon, name }) => {
   );
 };
 
-const TechnologySection = ({ title, technologies }) => (
+interface TechnologySectionProps {
+  title: string;
+  technologies: { name: string; icon: React.ElementType }[];
+}
+
+const TechnologySection: React.FC<TechnologySectionProps> = ({
+  title,
+  technologies,
+}) => (
   <Box mb={8}>
     <Heading as="h3" size="md" mb={4}>
       {title}
     </Heading>
-    <SimpleGrid columns={[3, 4, 5, 6]} spacing={4}>
+    <SimpleGrid columns={[3, 4, 5]} spacing={6}>
       {technologies.map((tech, index) => (
         <TechnologyCard key={index} icon={tech.icon} name={tech.name} />
       ))}
@@ -103,10 +122,8 @@ const Technologies = () => {
       { name: "JavaScript", icon: FaJs },
       { name: "TypeScript", icon: SiTypescript },
       { name: "Golang", icon: SiGo },
-      { name: "C#", icon: SiCsharp },
       { name: "Swift", icon: FaSwift },
       { name: "Dart", icon: SiDart },
-      { name: "R", icon: SiR },
     ],
     frameworks: [
       { name: "React", icon: FaReact },
@@ -120,9 +137,11 @@ const Technologies = () => {
       { name: "SwiftUI", icon: FaSwift },
     ],
     cloudDevOps: [
+      { name: "Linux", icon: FaLinux },
       { name: "AWS", icon: FaAws },
       { name: "GCP", icon: SiGooglecloud },
       { name: "Docker", icon: FaDocker },
+      { name: "Terraform", icon: SiTerraform },
     ],
     databases: [
       { name: "PostgreSQL", icon: SiPostgresql },
@@ -131,7 +150,6 @@ const Technologies = () => {
       { name: "Redis", icon: SiRedis },
       { name: "AWS S3", icon: FaAws },
       { name: "Firestore", icon: SiFirebase },
-      { name: "CoreData", icon: FaDatabase },
     ],
     dataScience: [
       { name: "Pandas", icon: SiPandas },
@@ -140,11 +158,10 @@ const Technologies = () => {
       { name: "PyTorch", icon: SiPytorch },
       { name: "TensorFlow", icon: SiTensorflow },
       { name: "OpenCV", icon: SiOpencv },
-      { name: "YOLOv8", icon: FaPython }, // Using Python icon as placeholder
-      { name: "Matplotlib", icon: SiPandas }, // Using Pandas icon as placeholder
     ],
     tools: [
       { name: "Git", icon: FaGitAlt },
+      { name: "VS Code", icon: SiVisualstudio },
       { name: "XCode", icon: SiXcode },
       { name: "Jupyter", icon: SiJupyter },
       { name: "RStudio", icon: SiR },
@@ -152,31 +169,39 @@ const Technologies = () => {
   };
 
   return (
-    <Box py={[8, 12, 16]} px={[4, 6, 8]}>
-      <Heading as="h2" size="xl" textAlign="center" mb={[6, 8, 10]}>
+    <Box py={[8, 12, 16]} px={[6, 8, 12]}>
+      <Heading
+        as="h2"
+        size="xl"
+        textAlign="center"
+        mb={[6, 8, 10]}
+        pb={[4, 6, 8]}
+      >
         Technologies that I have worked with
       </Heading>
-      <TechnologySection
-        title="Languages"
-        technologies={technologies.languages}
-      />
-      <TechnologySection
-        title="Frameworks & Libraries"
-        technologies={technologies.frameworks}
-      />
-      <TechnologySection
-        title="Cloud & DevOps"
-        technologies={technologies.cloudDevOps}
-      />
-      <TechnologySection
-        title="Databases"
-        technologies={technologies.databases}
-      />
-      <TechnologySection
-        title="Data Science & ML"
-        technologies={technologies.dataScience}
-      />
-      <TechnologySection title="Tools" technologies={technologies.tools} />
+      <SimpleGrid columns={[1, 2]} spacingY={25} spacingX={55}>
+        <TechnologySection
+          title="Languages"
+          technologies={technologies.languages}
+        />
+        <TechnologySection
+          title="Frameworks & Libraries"
+          technologies={technologies.frameworks}
+        />
+        <TechnologySection
+          title="Cloud & DevOps"
+          technologies={technologies.cloudDevOps}
+        />
+        <TechnologySection
+          title="Databases"
+          technologies={technologies.databases}
+        />
+        <TechnologySection
+          title="Data Science & ML"
+          technologies={technologies.dataScience}
+        />
+        <TechnologySection title="Tools" technologies={technologies.tools} />
+      </SimpleGrid>
     </Box>
   );
 };

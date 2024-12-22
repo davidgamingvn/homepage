@@ -1,7 +1,7 @@
 const particleOptions = {
   particles: {
     number: {
-      value: 6,
+      value: 15,
       density: {
         enable: true,
         area: 1500,
@@ -11,7 +11,7 @@ const particleOptions = {
       value: ["#A4161A", "#FFC300", "#D3D3D3", "#FFFFFF"],
     },
     shape: {
-      type: ["triangle", "circle", "edge", "polygon"], 
+      type: ["triangle", "circle", "edge", "polygon"],
     },
     opacity: {
       value: 0.5,
@@ -39,11 +39,7 @@ const particleOptions = {
     events: {
       onHover: {
         enable: true,
-        mode: "grab",
-      },
-      onClick: {
-        enable: true,
-        mode: "push",
+        mode: ["grab", "bubble"],
       },
     },
     modes: {
@@ -53,11 +49,19 @@ const particleOptions = {
           opacity: 1,
         },
       },
-      push: {
-        quantity: 3,
+      bubble: {
+        distance: 200,
+        size: 10,
+        duration: 2,
+        opacity: 0.8,
+        speed: 3,
+      },
+      repulse: {
+        distance: 100,
+        duration: 0.4,
       },
     },
   },
 };
 
-export default particleOptions
+export default particleOptions;

@@ -170,8 +170,7 @@ function App() {
       <VStack p={10} style={{ zIndex: 1, position: "relative" }}>
         <Flex
           w="100%"
-          mb={4}
-          p={4}
+          mb={4}p={4}
           borderColor="gray.200"
           borderRadius={15}
           align="center"
