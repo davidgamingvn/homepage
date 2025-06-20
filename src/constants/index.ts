@@ -4,6 +4,7 @@ import apath from "../assets/projects/apath.jpg";
 import copperlens from "../assets/projects/copperlens.jpg";
 import dall_e from "../assets/projects/dall-e-clone.jpg";
 import firmnifest from "../assets/projects/firmnifest.jpg";
+import frontier from "../assets/projects/frontier.jpg";
 import javafx_shop from "../assets/projects/javafx-shop.jpg";
 import learnix from "../assets/projects/learnix.jpg";
 import muze from "../assets/projects/muze.jpg";
@@ -11,7 +12,6 @@ import scheduler from "../assets/projects/scheduler.jpg";
 import socket_banking from "../assets/projects/socket-banking.jpg";
 import teamup from "../assets/projects/teamup.jpg";
 import weatherhack from "../assets/projects/weatherhack.jpg";
-import frontier from "../assets/projects/frontier.jpg";
 
 export interface Experience {
   id: number;
@@ -33,9 +33,23 @@ export interface Project {
 const experiences: Experience[] = [
   {
     id: 1,
+    title: "Software Developer",
+    company: "Blue Cross Blue Shield of Arizona",
+    duration: "Feb 2025 – Present",
+    description: [
+      "Manage and optimize ETL pipelines across platforms to ensure data integrity for both providers and customers.",
+      "Utilise Azure Data Factory, Azure Functions, and Azure DevOps to orchestrate and monitor data workflows.",
+      "Maintain internal APIs using Postman API with C# and .NET, ensuring seamless integration across systems.",
+      "Implement real-time data streaming pipelines from MS SQL Server to Azure CosmosDB using Confluent Kafka.",
+      "Migrate batch processing jobs from network locations to Azure blobs using Azure Kubernetes Services.",
+    ],
+    location: "Phoenix, AZ, USA",
+  },
+  {
+    id: 2,
     title: "Software Development Intern",
     company: "fetchrocket",
-    duration: "Jul 2024 - Present",
+    duration: "Jul 2024 - Oct 2024",
     description: [
       "Developing an AI tool for summarizing academic materials.",
       "Utilized Pinecone for vector search, MySQL for database management.",
@@ -45,10 +59,10 @@ const experiences: Experience[] = [
     location: "Safety Harbor, FL, USA",
   },
   {
-    id: 2,
+    id: 3,
     title: "Software Engineer Intern",
     company: "Ralli",
-    duration: "Apr 2024 - Present",
+    duration: "Apr 2024 - Nov 2024",
     description: [
       "Contributing to the Ralli mobile app using Flutter and FlutterFlow.",
       "Implemented a CI/CD pipeline with Ruby on AWS and integrated RunSignUp API.",
@@ -57,10 +71,10 @@ const experiences: Experience[] = [
     location: "Austin, TX, USA",
   },
   {
-    id: 3,
+    id: 4,
     title: "Research Assistant",
     company: "Arizona State University",
-    duration: "Jan 2024 - Present",
+    duration: "Jan 2024 - Oct 2024",
     description: [
       "Built a system for privacy-preserving calendar slot computation using MPC and PSI.",
       "Developed backend infrastructure with Python and Django.",
@@ -69,10 +83,10 @@ const experiences: Experience[] = [
     location: "Tempe, AZ, USA",
   },
   {
-    id: 4,
+    id: 5,
     title: "Sports Program Manager",
     company: "Arizona State University",
-    duration: "Aug 2021 - Present",
+    duration: "Aug 2021 - Oct 2024",
     description: [
       "Managed ASU’s sports programs, increasing participant engagement by 25%.",
       "Coordinated events, conducted performance evaluations.",
@@ -81,7 +95,7 @@ const experiences: Experience[] = [
     location: "Tempe, AZ, USA",
   },
   {
-    id: 5,
+    id: 6,
     title: "Sports Program Supervisor",
     company: "Arizona State University",
     duration: "Aug 2021 - Jul 2022",
